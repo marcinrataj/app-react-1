@@ -17,12 +17,12 @@ class Post extends React.Component {
         {this.state.showContent ? (
           <p>{this.props.content}</p>
         ) : (
-          <>
+          <div>
             <p>{this.props.shortContent}</p>
             <button onClick={() => this.showMoreContent()}>
               Czytaj więcej
             </button>
-          </>
+          </div>
         )}
         <hr />
       </div>
@@ -64,5 +64,8 @@ const Blog = function () {
     </div>
   );
 };
-const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
+  );
 root.render(<Blog />);
