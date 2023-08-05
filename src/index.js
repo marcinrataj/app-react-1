@@ -1,71 +1,17 @@
-class Post extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showContent: false,
-    };
-  }
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-  showMoreContent() {
-    this.setState({ showContent: true });
-  }
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-  render() {
-    return (
-      <div>
-        <h2>{this.props.title} </h2>
-        {this.state.showContent ? (
-          <p>{this.props.content}</p>
-        ) : (
-          <div>
-            <p>{this.props.shortContent}</p>
-            <button onClick={() => this.showMoreContent()}>
-              Czytaj więcej
-            </button>
-          </div>
-        )}
-        <hr />
-      </div>
-    );
-  }
-}
-
-const Blog = function () {
-  const posts = [
-    {
-      title: "Przepis na naleśniki",
-      shortContent: "Na naturalnym mleku...",
-      content: "mleko, jajka zmieszać...",
-      showContent: true,
-      id: 2,
-    },
-    {
-      title: "Przepis na kurczaka",
-      shortContent: "Na ostro...",
-      content: "pokroić kurczaka, usmażyć....",
-      showContent: true,
-      id: 3,
-    },
-  ];
-
-  const postsList = posts.map((el) => (
-    <Post
-      key={el.id}
-      title={el.title}
-      content={el.content}
-      showContent={el.showContent}
-      shortContent={el.shortContent}
-    />
-  ));
-  return (
-    <div>
-      <p>To jest blog o gotowaniu</p>
-      {postsList}
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(
-  document.getElementById("root")
-  );
-root.render(<Blog />);
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
