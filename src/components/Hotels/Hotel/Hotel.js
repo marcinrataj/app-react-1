@@ -1,9 +1,14 @@
 import React from "react";
+import styles from "./Hotel.module.css";
 
-function Hotel(){
+
+function Hotel() {
   return (
-    <div>hotel</div>
-  )
+    <div className={styles.hotel}>
+
+      hotel
+    </div>
+  );
 }
 
-export default Hotel
+export default Hotel;
