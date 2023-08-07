@@ -1,14 +1,17 @@
-import React from "react";
+import React, { Component } from 'react';
 import Hotel from './Hotel/Hotel';
+import styles from './Hotels.module.css';
 
-function Hotels(){
-  return (
-    <div>
-    <Hotel/>
-    <Hotel/>
-    </div>
-  )
-
+class Hotels extends Component {
+  render() {
+    return (
+      <div className={styles.container}>
+        <h2 className={styles.title}>Oferty:</h2>
+        <Hotel />
+        <Hotel /> 
+      </div>
+    );
+  }
 }
 
-export default Hotels
+export default Hotels;
