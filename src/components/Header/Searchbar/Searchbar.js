@@ -11,7 +11,7 @@ function Searchbar() {
         />
       </div>
       <div>
-        <button className="btn btn-primary">Szukaj</button>
+        <button className="ml-1 btn btn-secondary">Szukaj</button>
         </div>
     </div>
   );
