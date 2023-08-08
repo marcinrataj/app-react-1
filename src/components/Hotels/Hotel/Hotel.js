@@ -1,13 +1,22 @@
+import {PropTypes} from "prop-types";
 import React from "react";
 import styles from "./Hotel.module.css";
 import hotelImg from "../../../assets/images/hotel.jpg";
+
+const propTypes = {
+  name: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+}
+
 
 function Hotel(props) {
   return (
     <div className={`card  ${styles.hotel}`}>
       <div className="card-body">
         <div className="row">
-          <div className="col-4">
+          <div className="col-4">{props.missing}
             <img src={hotelImg} alt="" className="img-fluid img-thumbnail" />
           </div>
           <div className="col-8">
@@ -35,5 +44,7 @@ function Hotel(props) {
     </div>
   );
 }
+
+Hotel.propTypes = propTypes;
 
 export default Hotel;
