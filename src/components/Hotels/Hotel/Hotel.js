@@ -1,13 +1,15 @@
-import {PropTypes} from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 import styles from "./Hotel.module.css";
 import hotelImg from "../../../assets/images/hotel.jpg";
+import ThemeContext from "../../../context/themeContext";
+
 
 const propTypes = {
   name: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string
 }
 
 
@@ -27,15 +29,15 @@ function Hotel(props) {
               </div>
               <div className="col text-right">
                 <h5>Ocena: {props.rating}</h5>
-                <a href="#" className="btn btn-primary mt-2 px-4">Pokaż</a>
+                <ThemeContext.Consumer>{({theme}) => (
+                <a href="#" className={`btn btn-${theme} mt-2 px-4`}>Pokaż</a>
+                )}</ThemeContext.Consumer>
               </div>
             </div>
           </div>
 
           <div className="col-12">
-            <p className={styles.description}>
-              {props.description}
-            </p>
+            <p className={styles.description}>Lorem ipsum dolor sit amet, consecteur adipiscing elit, Quisque consequat id lorem vitae accumsan</p>
           </div>
         </div>
       </div>

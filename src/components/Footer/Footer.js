@@ -1,8 +1,13 @@
 
+import ThemeContext from "../../context/themeContext"
+
 function Footer(props){
 return(
   <div>
-  <div className={`text-center m3 text-${props.theme}`}>stopka 2021</div>
+  <ThemeContext.Consumer>
+  {({theme}) => 
+  <div className={`text-center m3 text-${theme}`}>stopka 2021</div>
+  }</ThemeContext.Consumer>
   </div>
 )
 }
