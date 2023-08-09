@@ -88,7 +88,7 @@ class App extends Component {
 
     return (
       <ThemeContext.Provider value={{
-        theme: this.state.theme,
+        color: this.state.theme,
         onChange: this.changeTheme
       }}>
         <Layout
