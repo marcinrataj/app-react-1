@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {PropTypes} from "prop-types";
+// import {PropTypes} from "prop-types";
 import Hotel from './Hotel/Hotel';
 import styles from './Hotels.module.css';
 
-const propTypes = {
-  hotels: PropTypes.array.isRequired
-}
+// const propTypes = {
+//   hotels: PropTypes.array(PropTypes.shape({
+//   }))
+// }  
 class Hotels extends Component {
   render() {
     return (
@@ -15,7 +16,7 @@ class Hotels extends Component {
       </div>
     );
   }
-}
+} 
 
-Hotels.propTypes = propTypes;
+// Hotels.propTypes = propTypes;
 export default Hotels; 

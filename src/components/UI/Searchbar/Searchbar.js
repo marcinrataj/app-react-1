@@ -11,7 +11,6 @@ function Searchbar(props) {
   
 
   const search = () => {
-    // console.log("szukaj", term);
     props.onSearch(term)
   };
 
