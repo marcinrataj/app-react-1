@@ -25,11 +25,9 @@ function Hotel(props) {
                 <p className={styles.title}>{props.name}</p>
                 <span className="badge badge-pill badge-secondary">{props.city}</span>
               </div>
-              <div className="col text-right ">
+              <div className="col text-right">
                 <h5>Ocena: {props.rating}</h5>
-                <a href="#" className="btn btn-primary mt-2 px-4 float-right">
-                  Pokaż
-                </a>
+                <a href="#" className="btn btn-primary mt-2 px-4">Pokaż</a>
               </div>
             </div>
           </div>

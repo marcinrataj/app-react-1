@@ -31,7 +31,9 @@ function Searchbar(props) {
         placeholder="Szukaj..."
       />
       <div>
-        <button onClick={search} className="ml-1 btn btn-secondary">
+        <button 
+        onClick={search} 
+        className={`ml-1 btn btn-${props.theme}`}>
           Szukaj
         </button>
       </div>
