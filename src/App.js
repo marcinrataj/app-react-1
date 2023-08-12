@@ -9,6 +9,7 @@ import Layout from "./components/Layout/Layout";
 import Footer from "./components/Footer/Footer";
 import ThemeButton from "./components/UI/ThemeButton/ThemeButton";
 import ThemeContext from "./context/themeContext";
+import AuthContext from "./context/authContext";
 
 class App extends Component {
   static contextType = ThemeContext;
@@ -38,6 +39,7 @@ class App extends Component {
     hotels: [],
     loading: true,
     theme: "primary",
+    isAuthenticated: false
   };
 
   // wyszukiwanie hotelu działające
@@ -87,6 +89,10 @@ class App extends Component {
     const footer = (<Footer theme={this.context} />)
 
     return (
+      <AuthContext.Provider value={{isAuthenticated: this.state.isAuthenticated,
+      login: () => this.setState({isAuthenticated: true}),
+      logout: () => this.setState({isAuthenticated: false})
+      }}>
       <ThemeContext.Provider value={{
         color: this.state.theme,
         onChange: this.changeTheme
@@ -98,6 +104,7 @@ class App extends Component {
           footer={footer}
         />
       </ThemeContext.Provider>
+      </AuthContext.Provider>
     );
   }
 }

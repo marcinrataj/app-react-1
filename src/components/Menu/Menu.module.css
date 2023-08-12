@@ -6,12 +6,19 @@
 }
 .menuItem{
   display: inline-block;
+  margin-right: 15px;
 }
 a{
   text-decoration: none;
 }
 
+.menuItem a{
+  color: #6c757d;
+}
+
 .menuContainer{
   border: 1px solid #cdcdcd;
   margin: 10px 0;
+  background-color: rgba(84, 84, 84, 0.175);
+  padding: 10px;
 }
