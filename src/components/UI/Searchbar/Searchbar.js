@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {PropTypes} from "prop-types";
 import ThemeContext from "../../../context/themeContext";
 import { useContext } from "react";
@@ -23,13 +23,26 @@ function Searchbar(props) {
     }
   }
 
+  const focusInput = () => {
+    const input = document.querySelector('.search');
+    input.focus()
+  }
+
+  useEffect(() => {
+    //...
+    focusInput()
+  }, []);
+
+//componentDidMount()
+//componentDidUpdate()
+
   return (
     <div className="d-flex">
       <input
         value={term}
         onKeyDown={onKeyDownHandler}
         onChange={(e) => setTerm(e.target.value)}
-        className="form-control"
+        className="form-control search"
         type="text"
         placeholder="Szukaj..."
       />
